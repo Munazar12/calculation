@@ -8,15 +8,15 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 100px;
-            background-color: #5408eb;
+            margin-top: 50px;
+            background-color: aqua;
         }
         #calculator {
             width: 300px;
             margin: 0 auto;
-            border: 1px solid #f7aa04;
+            border: 1px solid #cccccc;
             padding: 10px;
-            background-color: #eb0808;
+            background-color: #f80707;
             height: 300px;
         }
         input[type="text"] {
@@ -24,16 +24,13 @@
             margin-bottom: 10px;
             padding: 5px;
             box-sizing: border-box;
-            color: #08ff08;
             display: grid;
         }
         button {
             width: 40px;
             height: 40px;
             margin: 5px;
-            color:rgb(1, 1, 86) 
-            
-
+        }
     </style>
 </head>
 <body>
@@ -63,14 +60,13 @@
         <button onclick="clearResult()">C</button>
     </div>
 
-
-   <script>
+    <script>
+        let currentValue = "";
+        let operator = "";
 
         function appendValue(value) {
             currentValue += value;
-            document.getElement <script>
-        let currentValue = "";
-        let operator = "";ById("result").value = currentValue;
+            document.getElementById("result").value = currentValue;
         }
 
         function appendOperator(op) {
@@ -92,5 +88,24 @@
                         result -= operand;
                         break;
                     case "*":
+                        result *= operand;
+                        break;
+                    case "/":
+                        result /= operand;
+                        break;
+                }
+            }
+            currentValue = result.toString();
+            document.getElementById("result").value = currentValue;
+        }
+
+        function clearResult() {
+            currentValue = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
 </body>
 </html>
+           
+   
+       
