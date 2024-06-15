@@ -63,6 +63,7 @@
         <button onclick="clearResult()">C</button>
     </div>
 
+
    <script>
 
         function appendValue(value) {
@@ -91,21 +92,5 @@
                         result -= operand;
                         break;
                     case "*":
-                        result *= operand;
-                        break;
-                    case "/":
-                        result /= operand;
-                        break;
-                }
-            }
-            currentValue = result.toString();
-            document.getElementById("result").value = currentValue;
-        }
-
-        function clearResult() {
-            currentValue = "";
-            document.getElementById("result").value = "";
-        }
-    </script>
 </body>
 </html>
